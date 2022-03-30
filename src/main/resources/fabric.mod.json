@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "oldblockhit",
+  "version": "${version}",
+  "name": "Old Block Hit",
+  "description": "Adds the old block hit animation back to Minecraft.",
+  "authors": [
+    "TAKfsg",
+    "Special Thanks to CoolMineman"
+  ],
+  "contact": {
+    "sources": "https://github.com/Legacy-Fabric/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/oldblockhit/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.takfsg.oldblockhit.OldBlockHit"
+    ]
+  },
+  "mixins": [
+    "oldblockhit.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.0",
+    "minecraft": "1.8.9"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
