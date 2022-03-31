@@ -11,7 +11,7 @@
   "contact": {
     "sources": "https://github.com/TAKfsg/oldblockhit-legacy-fabric"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/oldblockhit/icon.png",
   "environment": "*",
   "entrypoints": {
