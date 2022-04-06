@@ -3,15 +3,14 @@
   "id": "oldblockhit",
   "version": "${version}",
   "name": "Old Block Hit",
-  "description": "Adds the old block hit animation back to Minecraft.",
+  "description": "Adds the old block hit animation back to Minecraft.\nSpecial Thanks to Hyperium and CoolMineman",
   "authors": [
-    "TAKfsg",
-    "Special Thanks to CoolMineman"
+    "TAKfsg"
   ],
   "contact": {
-    "sources": "https://github.com/Legacy-Fabric/fabric-example-mod"
+    "sources": "https://github.com/TAKfsg/oldblockhit-legacy-fabric"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/oldblockhit/icon.png",
   "environment": "*",
   "entrypoints": {
