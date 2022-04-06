@@ -3,7 +3,7 @@
   "id": "oldblockhit",
   "version": "${version}",
   "name": "Old Block Hit",
-  "description": "Adds the old block hit animation back to Minecraft.\nSpecial Thanks to Hyperium and CoolMineman",
+  "description": "Adds the old block hit animation back to Minecraft.\nSpecial Thanks to contributors of Hyperium and CoolMineman",
   "authors": [
     "TAKfsg"
   ],

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(HeldItemRenderer.class)
-public abstract class HeldItemRendererMixin {
+public class HeldItemRendererMixin {
 
 	@Shadow @Final private MinecraftClient field_1876;
 	@Shadow private ItemStack field_1877;
