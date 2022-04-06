@@ -1,6 +1,9 @@
 # Old Block Hit
 
-Basically a copy and paste of CoolMineman's oldblockepic mod for now.
+Inspired by CoolMineman's oldblockepic mod, now copied and pasted from Hyperium!!
 
 ### Original oldblockepic Mod
 https://github.com/CoolMineman/oldblockepic
+
+### Hyperium
+https://github.com/HyperiumClient/Hyperium
