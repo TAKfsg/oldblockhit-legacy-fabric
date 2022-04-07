@@ -34,16 +34,13 @@ public class HeldItemRendererMixin {
     @Inject(method = "method_9873", at = @At(value = "HEAD"))
     private void useSwing(CallbackInfo ci) {
         if (field_1876.options.keyAttack.isPressed() && field_1876.options.keyUse.isPressed() && field_1876.result.type == HitResult.Type.BLOCK) {
-            Material targetedMaterial = field_1876.world.getBlockState(field_1876.result.getBlockPos()).getBlock().getMaterial();
-            if (targetedMaterial != Material.WATER && targetedMaterial != Material.LAVA && targetedMaterial != Material.AIR) {
-                ClientPlayerEntity player = field_1876.player;
-                int swingAnimationEnd = player.hasStatusEffect(StatusEffect.HASTE) ? (6 - (1 +
-                        player.getEffectInstance(StatusEffect.HASTE).getAmplifier())) : (player.hasStatusEffect(StatusEffect.MINING_FATIGUE) ? (6 + (1 +
-                        player.getEffectInstance(StatusEffect.MINING_FATIGUE).getAmplifier()) * 2) : 6);
-                if (!player.handSwinging || player.handSwingTicks >= swingAnimationEnd / 2 || player.handSwingTicks < 0) {
-                    player.handSwingTicks = -1;
-                    player.handSwinging = true;
-                }
+            ClientPlayerEntity player = field_1876.player;
+            int swingAnimationEnd = player.hasStatusEffect(StatusEffect.HASTE) ? (6 - (1 +
+                    player.getEffectInstance(StatusEffect.HASTE).getAmplifier())) : (player.hasStatusEffect(StatusEffect.MINING_FATIGUE) ? (6 + (1 +
+                    player.getEffectInstance(StatusEffect.MINING_FATIGUE).getAmplifier()) * 2) : 6);
+            if (!player.handSwinging || player.handSwingTicks >= swingAnimationEnd / 2 || player.handSwingTicks < 0) {
+                player.handSwingTicks = -1;
+                player.handSwinging = true;
             }
         }
     }
