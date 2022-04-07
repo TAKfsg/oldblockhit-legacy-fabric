@@ -12,7 +12,7 @@ public class PlayerEntityMixin {
 
     /**
      * @author TAKfsg
-     * @reason Old Eye Height
+     * @reason Semi-old Sneak Animation
      */
     @Overwrite
     public float getEyeHeight() {

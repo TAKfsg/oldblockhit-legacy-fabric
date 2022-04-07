@@ -17,7 +17,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity> extends 
     }
 
     @Redirect(method = "renderFeatures", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/entity/feature/FeatureRenderer;combineTextures()Z", ordinal = 0))
-    private boolean oldArmor(FeatureRenderer instance) {
+    private boolean redArmor(FeatureRenderer instance) {
         return true;
     }
 }
