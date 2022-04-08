@@ -10,7 +10,7 @@ public class PlayerEntityMixin {
     private float currentHeight = 1.62F;
     private long lastChangeTime = System.currentTimeMillis();
 
-    // TODO: Faster Upsneak Animation
+    // TODO: Make Upsneak Faster than Downsneak
     /**
      * @author TAKfsg
      * @reason Semi-old Sneak Animation

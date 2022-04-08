@@ -6,10 +6,12 @@
   "mixins": [
   ],
   "client": [
+    "BiPedModelMixin",
     "HeldItemRendererMixin",
+    "InventoryScreenMixin",
+    "ArmorFeatureMixin",
     "PlayerEntityMixin",
-    "LivingEntityRendererMixin",
-    "InventoryScreenMixin"
+    "ItemFeatureRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
