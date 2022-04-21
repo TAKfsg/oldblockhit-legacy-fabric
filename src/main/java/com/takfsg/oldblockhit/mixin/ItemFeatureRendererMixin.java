@@ -19,6 +19,7 @@
 package com.takfsg.oldblockhit.mixin;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import com.takfsg.oldblockhit.config.Config;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
@@ -43,11 +44,11 @@ public class ItemFeatureRendererMixin {
 
     /**
      * @author TAKfsg
-     * @reason Old 3rd Person Block Animation
+     * @reason Old 3rd Person Block Animation and Old Item Hold
      */
     @Overwrite
     public void render(LivingEntity entity, float handSwing, float handSwingAmount, float tickDelta, float age, float headYaw, float headPitch, float scale) {
-        doRenderLayer(entity, field_11165);
+        doRenderLayer(entity, this.field_11165);
     }
 
     public void doRenderLayer(LivingEntity entitylivingbaseIn, LivingEntityRenderer<?> livingEntityRenderer) {
@@ -55,7 +56,7 @@ public class ItemFeatureRendererMixin {
 
         if (itemstack != null) {
             GlStateManager.pushMatrix();
-            if (this.field_11165.getModel().field_1493) {
+            if (livingEntityRenderer.getModel().field_1493) {
                 float f = 0.5F;
                 GlStateManager.translatef(0.0F, 0.625F, 0.0F);
                 GlStateManager.rotatef(-20.0F, -1.0F, 0.0F, 0.0F);
@@ -64,25 +65,35 @@ public class ItemFeatureRendererMixin {
             Label_0327:
             if (entitylivingbaseIn instanceof PlayerEntity) {
                 if (((PlayerEntity) entitylivingbaseIn).method_2611()) {
-                    if (entitylivingbaseIn.isSneaking()) {
-                        ((BiPedModel) livingEntityRenderer.getModel()).method_9636(0.0325f);
-                        GlStateManager.scalef(1.05f, 1.05f, 1.05f);
-                        GlStateManager.translatef(-0.58f, 0.32f, -0.07f);
-                        GlStateManager.rotatef(-24405.0f, 137290.0f, -2009900.0f, -2654900.0f);
+                    if (Config.old3rdPersonBlock) {
+                        if (entitylivingbaseIn.isSneaking()) {
+                            ((BiPedModel) livingEntityRenderer.getModel()).method_9636(0.0325f);
+                            GlStateManager.scalef(1.05f, 1.05f, 1.05f);
+                            GlStateManager.translatef(-0.58f, 0.32f, -0.07f);
+                            GlStateManager.rotatef(-24405.0f, 137290.0f, -2009900.0f, -2654900.0f);
+                        } else {
+                            ((BiPedModel) livingEntityRenderer.getModel()).method_9636(0.0325f);
+                            GlStateManager.scalef(1.05f, 1.05f, 1.05f);
+                            GlStateManager.translatef(-0.45f, 0.25f, -0.07f);
+                            GlStateManager.rotatef(-24405.0f, 137290.0f, -2009900.0f, -2654900.0f);
+                        }
                     } else {
-                        ((BiPedModel) livingEntityRenderer.getModel()).method_9636(0.0325f);
-                        GlStateManager.scalef(1.05f, 1.05f, 1.05f);
-                        GlStateManager.translatef(-0.45f, 0.25f, -0.07f);
-                        GlStateManager.rotatef(-24405.0f, 137290.0f, -2009900.0f, -2654900.0f);
+                        ((BiPedModel)livingEntityRenderer.getModel()).method_9636(0.0625f);
                     }
                 } else {
                     ((BiPedModel) livingEntityRenderer.getModel()).method_9636(0.0625f);
                 }
 
-                if (!((PlayerEntity) entitylivingbaseIn).method_2611()) {
-                    GlStateManager.translatef(-0.0855f, 0.4775f, 0.1585f);
-                    GlStateManager.rotatef(-19.0f, 20.0f, 0.0f, -6.0f);
-                    break Label_0327;
+                if (!Config.oldItemHeld) {
+                    GlStateManager.translatef(-0.0625f, 0.4375f, 0.0625f);
+                } else {
+                    if (!((PlayerEntity) entitylivingbaseIn).method_2611()) {
+                        if (Config.oldItemHeld) {
+                            GlStateManager.translatef(-0.0855f, 0.4775f, 0.1585f);
+                            GlStateManager.rotatef(-19.0f, 20.0f, 0.0f, -6.0f);
+                            break Label_0327;
+                        }
+                    }
                 }
 
                 if (((PlayerEntity) entitylivingbaseIn).method_2611()) {
