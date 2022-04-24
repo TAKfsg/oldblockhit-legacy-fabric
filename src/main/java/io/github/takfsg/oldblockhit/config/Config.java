@@ -1,4 +1,4 @@
-package com.takfsg.oldblockhit.config;
+package io.github.takfsg.oldblockhit.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

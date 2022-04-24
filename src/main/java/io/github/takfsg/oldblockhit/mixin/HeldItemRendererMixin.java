@@ -1,7 +1,7 @@
- package com.takfsg.oldblockhit.mixin;
+ package io.github.takfsg.oldblockhit.mixin;
 
  import com.mojang.blaze3d.platform.GlStateManager;
- import com.takfsg.oldblockhit.config.Config;
+ import io.github.takfsg.oldblockhit.config.Config;
  import net.minecraft.client.MinecraftClient;
  import net.minecraft.client.network.AbstractClientPlayerEntity;
  import net.minecraft.client.render.item.HeldItemRenderer;

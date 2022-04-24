@@ -1,6 +1,6 @@
-package com.takfsg.oldblockhit.mixin;
+package io.github.takfsg.oldblockhit.mixin;
 
-import com.takfsg.oldblockhit.config.Config;
+import io.github.takfsg.oldblockhit.config.Config;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;

@@ -1,6 +1,6 @@
-package com.takfsg.oldblockhit;
+package io.github.takfsg.oldblockhit;
 
-import com.takfsg.oldblockhit.config.Config;
+import io.github.takfsg.oldblockhit.config.Config;
 import net.fabricmc.api.ModInitializer;
 
 public class OldBlockHit implements ModInitializer {

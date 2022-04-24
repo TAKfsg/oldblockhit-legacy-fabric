@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.takfsg.oldblockhit.mixin",
+  "package": "io.github.takfsg.oldblockhit.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
