@@ -67,19 +67,23 @@ public class HeldItemRendererMixin {
     @Overwrite
     private void method_9867(AbstractClientPlayerEntity abstractClientPlayerEntity, float f) {
         if (Config.oldConsume) {
-            float useAmount = (float) abstractClientPlayerEntity.getItemUseTicks() - f + 1.0F;
-            float f1 = 1.0F - useAmount / (float) field_1877.getMaxUseTime();
-            float f2 = 1.0F - f1;
-            f2 = f2 * f2 * f2;
-            f2 = f2 * f2 * f2;
-            f2 = f2 * f2 * f2;
-            float f3 = 1.0F - f2;
-            GlStateManager.translatef(0.0F, MathHelper.abs(MathHelper.cos(useAmount / 4.0F * 3.1415927F) * 0.1F) * (float) ((double) f1 > 0.2D ? 1 : 0), 0.0F);
-            GlStateManager.translatef(f3 * 0.6F, -f3 * 0.5F, 0.0F);
-            GlStateManager.rotatef(f3 * 90.0F, 0.0F, 1.0F, 0.0F);
-            GlStateManager.rotatef(f3 * 10.0F, 1.0F, 0.0F, 0.0F);
-            GlStateManager.rotatef(f3 * 30.0F, 0.0F, 0.0F, 1.0F);
-        } else {
+	           float useAmount = (float) abstractClientPlayerEntity.getItemUseTicks() - f + 1.0F;
+	           float f1 = 1.0F - useAmount / (float) field_1877.getMaxUseTime();
+	           float f2 = 1.0F - f1;
+	           f2 = f2 * f2 * f2;
+	           f2 = f2 * f2 * f2;
+	           f2 = f2 * f2 * f2;
+	           f2 -= 0.05F;
+	           float j = 1.0F - f2;
+	           GlStateManager.translatef(0.0F, MathHelper.abs(MathHelper.cos(useAmount / 4F * (float) Math.PI) * 0.11F)
+	    		         * (f1 > 0.2D ? 1 : 0), 0.0F);
+	           GlStateManager.translatef(j * 0.6F, -j * 0.5F, 0.0F);
+	           GlStateManager.rotatef(j * 90.0F, 0.0F, 1.0F, 0.0F);
+	           GlStateManager.rotatef(j * 10.0F, 1.0F, 0.0F, 0.0F);
+	           GlStateManager.rotatef(j * 30.0F, 0.0F, 0.0F, 1.0F);
+	           GlStateManager.translatef(0, -0.0F, 0.06F);
+	           GlStateManager.rotatef(-4F, 1, 0, 0);
+ 	    } else {
             float g = (float)abstractClientPlayerEntity.getItemUseTicks() - f + 1.0F;
             float h = g / (float)this.field_1877.getMaxUseTime();
             float i = MathHelper.abs(MathHelper.cos(g / 4.0F * 3.1415927F) * 0.1F);
